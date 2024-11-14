@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arya Samaj of Long Island, Inc. - Extending Vedic Heritage</title>
+    <meta name="description" content="Arya Samaj of Long Island, Inc. extends the Vedic Heritage for the benefit of Hindu Community at large, formed on June 17, 2006.">
+    <meta name="author" content="Arya Samaj of Long Island, Inc.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Droid+Sans:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('gallery/hero.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+        }
+        .navbar-brand {
+            font-family: 'Droid Sans', sans-serif;
+            font-weight: 700;
+            color: #A52A2A; /* New color: Brown */
+        }
+        .nav-link {
+            color: #34495e;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #CD5C5C; /* New color: Indian Red */
+        }
+        .btn-hero {
+            background-color: #A52A2A; /* New color: Brown */
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+        .btn-hero:hover {
+            background-color: #CD5C5C; /* New color: Indian Red */
+        }
+        .section-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-heading h2 {
+            font-size: 2.5rem;
+            color: #A52A2A; /* New color: Brown */
+            margin-bottom: 10px;
+        }
+        .section-heading h3 {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+        }
+        .service-box {
+            text-align: center;
+            padding: 30px;
+            margin-bottom: 30px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        .service-box:hover {
+            transform: translateY(-10px);
+        }
+        .service-box i {
+            font-size: 3rem;
+            color: #A52A2A; /* New color: Brown */
+            margin-bottom: 20px;
+        }
+        .gallery-item {
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .gallery-item img {
+            width: 100%;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        .testimonial {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 3px solid #A52A2A; /* New color: Brown */
+        }
+        .footer {
+            background-color: #A52A2A; /* New color: Brown */
+            color: #ecf0f1;
+            padding: 50px 0;
+        }
+        .footer h4 {
+            color: #F08080; /* New color: Light Coral */
+            margin-bottom: 20px;
+        }
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: #F08080; /* New color: Light Coral */
+        }
+        .social-icons {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+        .social-icons a {
+            color: #ecf0f1;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #F08080; /* New color: Light Coral */
+        }
+        .footer-bottom {
+            background-color: #800000; /* New color: Maroon */
+            color: #7f8c8d;
+            padding: 15px 0;
+            font-size: 0.9rem;
+        }
+        .upcoming-flights {
+            background-color: #ecf0f1;
+            padding: 50px 0;
+        }
+        .flight-card {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .flight-date {
+            font-size: 1.2rem;
+            color: #A52A2A; /* New color: Brown */
+            font-weight: bold;
+        }
+        .featured-story {
+            background-color: #A52A2A; /* New color: Brown */
+            color: #fff;
+            padding: 50px 0;
+        }
+        .featured-story img {
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Arya Samaj of Long Island, Inc.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="abouus.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Our Programs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#events">Upcoming Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#featured">Featured Story</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contactus.html">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="donation.html">Donate</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="header">
+        <h1 class="display-3 mb-4">Arya Samaj of Long Island, Inc.</h1>
+        <h2 class="display-6 mb-5">Extending Vedic Heritage for the Hindu Community</h2>
+        <a href="Contactus.html" class="btn btn-hero btn-lg">Learn More</a>
+        <p class="mt-4 small">Arya Samaj of Long Island, Inc. - EIN: 205283119</p>
+    </header>
+
+    <main>
+        <section id="about" class="py-5">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>About Arya Samaj of Long Island, Inc.</h2>
+                    <h3>Preserving and Extending Vedic Heritage</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <p>Arya Samaj of Long Island, Inc. was formed on June 17, 2006, with the objective to extend the Vedic Heritage for the benefit of the Hindu Community at large. Our organization was established through the efforts of active members from Havan Groups operating in Nassau and Suffolk counties of Long Island, New York.</p>
+                        <p>We are dedicated to preserving and promoting Vedic traditions, fostering spiritual growth, and serving the Hindu community in Long Island and beyond.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-5 bg-light">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Our Programs</h2>
+                    <h3>Serving the Hindu Community through Vedic teachings and practices</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="service-box">
+                            <i class="fas fa-om"></i>
+                            <h3>Vedic Education</h3>
+                            <p>Offering classes and workshops on Vedic philosophy and traditions.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-box">
+                            <i class="fas fa-hands-praying"></i>
+                            <h3>Havan Ceremonies</h3>
+                            <p>Conducting traditional Vedic fire ceremonies for spiritual purification.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-box">
+                            <i class="fas fa-users"></i>
+                            <h3>Community Outreach</h3>
+                            <p>Organizing events and programs to unite and serve the Hindu community.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="py-5">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Our Impact</h2>
+                    <h3>See how the Arya Samaj is preserving and promoting Vedic Heritage.</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 gallery-item">
+                        <img src="gallery/gal1.jpg" alt="Vedic Event" class="img-fluid">
+                        <div class="gallery-caption">
+                            <h4>Vedic Festival</h4>
+                            <p>Celebrating community through Vedic rituals and education.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 gallery-item">
+                        <img src="gallery/galo.jpg" alt="Havan Ceremony" class="img-fluid">
+                        <div class="gallery-caption">
+                            <h4>Havan Ceremony</h4>
+                            <p>Participants engaged in a traditional fire ceremony.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 gallery-item">
+                        <img src="gallery/gal2.jpg" alt="Community Outreach" class="img-fluid">
+                        <div class="gallery-caption">
+                            <h4>Community Outreach</h4>
+                            <p>Engaging with the community for Vedic education.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="py-5 bg-light">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Testimonials</h2>
+                    <h3>Hear from those impacted by our Vedic Heritage efforts.</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="testimonial">
+                            <img src="gallery/image_25.jpg" alt="Raj S." class="img-fluid mx-auto d-block">
+                            <p>"The Arya Samaj has helped me connect deeply with my roots and understand Vedic traditions better."</p>
+                            <p class="font-weight-bold">- Raj S., Community Member</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial">
+                            <img src="gallery/image_26.jpg" alt="Priya K." class="img-fluid mx-auto d-block">
+                            <p>"The ceremonies are so spiritually fulfilling. I feel a sense of peace and connection."</p>
+                            <p class="font-weight-bold">- Priya K., Participant</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial">
+                            <img src="gallery/image_27.jpg" alt="Amrit R." class="img-fluid mx-auto d-block">
+                            <p>"The outreach programs are vital for our community. I appreciate the kindness and knowledge shared."</p>
+                            <p class="font-weight-bold">- Amrit R., Partner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="events" class="upcoming-flights">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Upcoming Events</h2>
+                    <h3>Join us for these enriching Vedic events</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="flight-card">
+                            <h4>Annual Vedic Festival</h4>
+                            <p class="flight-date">September 10, 2024</p>
+                            <p>Come celebrate with us at our annual Vedic Festival filled with ceremonies, food, and fellowship.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="flight-card">
+                            <h4>Vedic Philosophy Workshops</h4>
+                            <p class="flight-date">October 5-10, 2024</p>
+                            <p>Join us for a series of workshops on Vedic philosophy and its applications in modern life.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="flight-card">
+                            <h4>Havan Ceremony</h4>
+                            <p class="flight-date">December 2, 2024</p>
+                            <p>Participate in a traditional Havan ceremony to purify and bless our community.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="featured" class="featured-story">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h2>Featured Story</h2>
+                        <h3>The Formation of Arya Samaj of Long Island, Inc.</h3>
+                        <p>Discover the journey that led to the formation of Arya Samaj of Long Island, Inc., dedicated to preserving and extending Vedic Heritage. Learn how this initiative serves the Hindu community and promotes spiritual growth.</p>
+                        <a href="Contactus.html" class="btn btn-light">Read More Vedic Stories</a>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="gallery/ktb.jpg" alt="Vedic Background" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>About Us</h4>
+                    <p>Arya Samaj of Long Island, Inc. is dedicated to extending the Vedic Heritage for the benefit of the Hindu Community at large.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/aryasamajlongisland"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.twitter.com/aryasamajli"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/aryasamajlongisland"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="abouus.html">About Us</a></li>
+                        <li><a href="#services">Our Programs</a></li>
+                        <li><a href="Contactus.html">Volunteer</a></li>
+                        <li><a href="Contactus.html">Contact Us</a></li>
+                        <li><a href="donation.html">Donate</a></li>
+                        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Contact Us</h4>
+                    <p>Arya Samaj of Long Island, Inc.<br>
+                    P.O. Box 5116<br>
+                    Hauppauge, NY 11788</p>
+                    <p>NY State Reg. No.: 43-03-89</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+        <div class="container text-center">
+            <p>© 2024 Arya Samaj of Long Island, Inc. All rights reserved. EIN: 205283119</p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
